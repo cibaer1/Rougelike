@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
         transform.localScale = new Vector3(scale, scale, scale);
     }
 
-    // Update is called once per frame
+    // Update is called once per frame aaaaaaaaaaaa
     void Update()
     {
         if(Time.time - initTime > survivalTime) { Destroy(this.gameObject); }
