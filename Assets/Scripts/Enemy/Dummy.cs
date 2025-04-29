@@ -13,6 +13,8 @@ public class Dummy : MonoBehaviour
     [SerializeField] float iFrames;
     [SerializeField] GameObject bulletSpawner;
 
+    [SerializeField] int phase;
+
     float snapshotTime;
 
 
@@ -39,6 +41,7 @@ public class Dummy : MonoBehaviour
         anim = GetComponentInChildren<Animator>();
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<PlayerMovement>();
+        phase = 0;
     }
 
     // Update is called once per frame
@@ -77,9 +80,14 @@ public class Dummy : MonoBehaviour
 
     void changeState()
     {
-        if(distToPlayer < 5)
+        if(health / maxHealth < 0.25f) { phase = 3; }
+        else if(health / maxHealth < 0.5f) { phase = 2; }
+        else if(health / maxHealth < 0.75f) { phase = 1; }
+
+
+        if (distToPlayer < 5)
         { playerState = PlayerState.playerClose; }
-        else if(distToPlayer > 10)
+        else if (distToPlayer > 10)
         { playerState = PlayerState.playerFar; }
     }
 

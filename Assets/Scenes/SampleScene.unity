@@ -608,7 +608,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -638,7 +638,7 @@ Camera:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 4
   m_BackGroundColor: {r: 0.3990672, g: 0.41850746, b: 0.4490565, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1445,6 +1445,7 @@ MonoBehaviour:
   healthUI: {fileID: 547629456}
   iFrames: 0.25
   bulletSpawner: {fileID: 1168236650668673428, guid: 3ecad7c46857b9a4d893f66116d9d9cb, type: 3}
+  phase: 0
   bossState: 0
   playerState: 0
 --- !u!1 &1214375546
