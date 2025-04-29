@@ -14,6 +14,25 @@ public class Dummy : MonoBehaviour
     [SerializeField] GameObject bulletSpawner;
 
     float snapshotTime;
+
+
+    enum PlayerState
+    {
+        Idle,
+        playerClose,
+        playerFar
+    }
+    enum BossState
+    {
+        aggresive,
+        save,
+        desperate
+
+    }
+
+    [SerializeField] BossState bossState;
+    [SerializeField] PlayerState playerState;
+
     void Start()
     {
         health = maxHealth;
@@ -26,7 +45,7 @@ public class Dummy : MonoBehaviour
     void Update()
     {
         distToPlayer = Vector3.Distance(this.transform.position, player.transform.position);
-
+        changeState();
         
     }
     public void hit(float damage)
@@ -53,5 +72,22 @@ public class Dummy : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    #region
+
+    void changeState()
+    {
+        if(distToPlayer < 5)
+        { playerState = PlayerState.playerClose; }
+        else if(distToPlayer > 10)
+        { playerState = PlayerState.playerFar; }
+    }
+
+    void state()
+    {
+        
+    }
+
+    #endregion
 
 }

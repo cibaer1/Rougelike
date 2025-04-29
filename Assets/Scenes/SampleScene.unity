@@ -862,7 +862,7 @@ MonoBehaviour:
   healthRegenDelay: 1
   teleportCost: 15
   regenGainedOnMonsterHit: 3
-  iFrames: 0.25
+  iFrames: 0.5
   debug: 1
 --- !u!50 &601451726
 Rigidbody2D:
@@ -1444,6 +1444,9 @@ MonoBehaviour:
   maxHealth: 150
   healthUI: {fileID: 547629456}
   iFrames: 0.25
+  bulletSpawner: {fileID: 1168236650668673428, guid: 3ecad7c46857b9a4d893f66116d9d9cb, type: 3}
+  bossState: 0
+  playerState: 0
 --- !u!1 &1214375546
 GameObject:
   m_ObjectHideFlags: 0
