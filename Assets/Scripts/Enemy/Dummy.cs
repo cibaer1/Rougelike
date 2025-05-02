@@ -10,14 +10,16 @@ public class Dummy : MonoBehaviour
     [SerializeField] float health;
     [SerializeField] float maxHealth;
     [SerializeField] HealthUIEnemy healthUI;
+    [SerializeField] PatternSpawner patternScript;
     [SerializeField] float iFrames;
     [SerializeField] GameObject bulletSpawner;
+    
 
     [SerializeField] int phase;
 
     float snapshotTime;
 
-
+    
     enum PlayerState
     {
         Idle,
@@ -37,11 +39,13 @@ public class Dummy : MonoBehaviour
 
     void Start()
     {
+        
         health = maxHealth;
         anim = GetComponentInChildren<Animator>();
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<PlayerMovement>();
         phase = 0;
+        
     }
 
     // Update is called once per frame
@@ -49,6 +53,7 @@ public class Dummy : MonoBehaviour
     {
         distToPlayer = Vector3.Distance(this.transform.position, player.transform.position);
         changeState();
+        statebBehavior();
         
     }
     public void hit(float damage)
@@ -76,7 +81,7 @@ public class Dummy : MonoBehaviour
         }
     }
 
-    #region
+    #region state
 
     void changeState()
     {
@@ -91,7 +96,7 @@ public class Dummy : MonoBehaviour
         { playerState = PlayerState.playerFar; }
     }
 
-    void state()
+    void statebBehavior()
     {
         
     }
