@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class BulletSpawner : MonoBehaviour
@@ -14,8 +15,10 @@ public class BulletSpawner : MonoBehaviour
     public float rotationSpeed;
 
     Bullet bullet;
-    void Start()
+    public void Init()
     {
+        Debug.Log($"[Init] damage: {bulletDamage}, cooldown: {cooldown}, survivalTime: {survivalTime}");
+
         _bulletParent = GameObject.FindWithTag("BulletHolder");
         StartCoroutine(survival());
         StartCoroutine(StaticShoot());

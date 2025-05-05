@@ -24,10 +24,10 @@ public class PatternSpawner : MonoBehaviour
 
     public void rotating(Vector3 targetPos, float rotationSpeed, float bulletSpeed, float cooldown, int dmg)
     {
-        spawnSpawner(targetPos, Quaternion.Euler(0, 0, 0), 15f, cooldown, dmg, rotationSpeed, 1f);
-        spawnSpawner(targetPos, Quaternion.Euler(0, 0, 180), 15f, cooldown, dmg, rotationSpeed, 1f);
+        spawnSpawner(targetPos, Quaternion.Euler(0, 0, 0), 15f, cooldown, dmg, rotationSpeed, 1f, bulletSpeed);
+        spawnSpawner(targetPos, Quaternion.Euler(0, 0, 180), 15f, cooldown, dmg, rotationSpeed, 1f, bulletSpeed);
     }
-    void spawnSpawner(Vector3 position, Quaternion iniRotation, float survivalTime, float cooldown, int damage, float rotationSpeed, float scale)
+    void spawnSpawner(Vector3 position, Quaternion iniRotation, float survivalTime, float cooldown, int damage, float rotationSpeed, float scale, float bulletSpeed)
     {
         GameObject bullet = Instantiate(spawner, position, iniRotation);
         BulletSpawner script = bullet.GetComponent<BulletSpawner>();
@@ -36,6 +36,11 @@ public class PatternSpawner : MonoBehaviour
         script.bulletDamage = damage;
         script.rotationSpeed = rotationSpeed;
         script.bulletScale = scale;
+        script.bulletSpeed = bulletSpeed;
 
+        script.Init();
+
+        if(script == null) { Debug.LogError("Script in pattern spawner null"); }
+        Debug.Log("initCalled");
     }
 }

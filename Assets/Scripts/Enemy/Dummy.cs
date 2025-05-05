@@ -45,7 +45,7 @@ public class Dummy : MonoBehaviour
         player = GameObject.FindWithTag("Player");
         playerScript = player.GetComponent<PlayerMovement>();
         phase = 0;
-        patternScript.rotating(transform.position, 10f, 20f, 0.3f, 20);
+        patternScript.rotating(transform.position, 40f, 5f, 0.1f, 20);
         
     }
 
