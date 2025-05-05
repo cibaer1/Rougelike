@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bullet: {fileID: 5170787463688407541, guid: 081e37e656c27e64382959128f5076d2, type: 3}
-  survivalTime: 4
-  cooldown: 0.2
-  bulletSpeed: 2
-  bulletScale: 1.7
+  survivalTime: 10
+  cooldown: 1
+  bulletSpeed: 1
+  bulletScale: 1
   bulletDamage: 25
-  bulletSurvivalTime: 8
-  rotationSpeed: 5
+  bulletSurvivalTime: 10
+  rotationSpeed: 0
